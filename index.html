@@ -35,30 +35,152 @@ Assumptions, features, label definition, baseline, validation design, and leakag
 </p>
 
 <h2>Results</h2>
+<h3>Model Results</h3>
+
 <p>
-Model results, baseline comparison, and charts are available in the complete notebook.
+A Random Forest Classifier was trained using historical search and engagement features.
+The model was evaluated on the same test split used for baseline comparison.
 </p>
 
-<h2>Limitations</h2>
+<table>
+<tr>
+<th>Metric</th>
+<th>Score</th>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>0.52</td>
+</tr>
+</table>
+
+<h3>Classification Performance</h3>
+
+<table>
+<tr>
+<th>Class</th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1-score</th>
+<th>Support</th>
+</tr>
+<tr>
+<td>0</td>
+<td>0.61</td>
+<td>0.67</td>
+<td>0.64</td>
+<td>63</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0.32</td>
+<td>0.27</td>
+<td>0.29</td>
+<td>37</td>
+</tr>
+</table>
+
+<h3>Confusion Matrix</h3>
+
+<table>
+<tr>
+<th></th>
+<th>Predicted 0</th>
+<th>Predicted 1</th>
+</tr>
+<tr>
+<td>Actual 0</td>
+<td>42</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Actual 1</td>
+<td>27</td>
+<td>10</td>
+</tr>
+</table>
+
 <p>
-Limitations and honest framing of the analysis.
+The Random Forest model achieved 52% accuracy on the test split. 
+The results show that the model captures some patterns from historical search and engagement data, but performance is limited by class imbalance and available data distribution.
+</p>
+
+<h2>Limitations and honest framing</h2>
+
+<p>
+This analysis identifies observed patterns between historical search performance 
+and available engagement features. The model is intended for decision support 
+and does not prove Google's ranking algorithm or guarantee future content performance.
+</p>
+
+<p>
+The dataset contains imbalanced activity classes, which can affect model performance,
+especially for less frequent content categories. Results should be interpreted as 
+directional insights for content improvement and prioritization.
 </p>
 
 <h2>Ranked Recommendations</h2>
+
 <p>
-Action recommendations from the analysis.
+Based on the model findings and observed search performance patterns, the following
+recommendations can support content prioritization decisions:
 </p>
 
+<ol>
+<li>
+<strong>Review low-performing content:</strong>
+Identify content with weak search activity and evaluate opportunities for updates,
+improved relevance, or better user engagement.
+</li>
+
+<li>
+<strong>Prioritize high-potential pages:</strong>
+Focus on content showing positive historical signals where optimization may improve
+discoverability.
+</li>
+
+<li>
+<strong>Monitor search performance trends:</strong>
+Regularly track changes in impressions, clicks, and engagement signals to identify
+content requiring attention.
+</li>
+
+<li>
+<strong>Use model outputs as decision support:</strong>
+Apply predictions as recommendations for review rather than guaranteed outcomes.
+</li>
+</ol>
+
 <h2>Reproducibility</h2>
+
+<p>
+The complete analysis workflow, model training, and evaluation are available in the project repository and capstone notebook.
+</p>
+
+<p>
+<a href="https://github.com/zkhadija132/flyrank-ml-assignment">
+View GitHub Repository
+</a>
+</p>
+
 <p>
 <a href="https://github.com/zkhadija132/flyrank-ml-assignment/blob/main/work/notebooks/capstone.ipynb">
 Read the complete Capstone Notebook
 </a>
 </p>
 
-<h2>Acknowledgments</h2>
+<h2>Acknowledgments & Data Credit</h2>
+
 <p>
-Built on the FlyRank ML Internship dataset.
+This project was built on the FlyRank ML Internship dataset.
+The dataset provided the search and engagement data used for feature analysis,
+model development, and evaluation.
+</p>
+
+<p>
+Data source:
+<a href="https://flyrank.ai">
+FlyRank
+</a>
 </p>
 
 </body>
